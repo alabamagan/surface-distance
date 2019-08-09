@@ -13,9 +13,9 @@
 # limitations under the License.
 """Module exposing surface distance based measures."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
+
+
+
 
 from . import lookup_tables  # pylint: disable=relative-beyond-top-level
 import numpy as np
