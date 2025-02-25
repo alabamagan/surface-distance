@@ -18,7 +18,7 @@ from setuptools import setup
 setup(name="Surface Distance Based Measures",
       version="0.1",
       description=(
-          "Library containing utilities to compute performance metrics for "
+          "Library containing utilities to compute performance Metrics for "
           "segmentation"),
       url="https://github.com/deepmind/surface-distance",
       author="DeepMind",

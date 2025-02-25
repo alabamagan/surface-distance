@@ -13,9 +13,9 @@
 # limitations under the License.
 """Module exposing surface distance based measures."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
+
+
+
 
 from . import lookup_tables  # pylint: disable=relative-beyond-top-level
 import numpy as np
@@ -46,7 +46,7 @@ def _check_3d_numpy_array(name, array):
 
 def _assert_is_bool_numpy_array(name, array):
   _assert_is_numpy_array(name, array)
-  if array.dtype != np.bool:
+  if not np.issubdtype(array.dtype, np.integer) and array.dtype != np.bool_:
     raise ValueError("The argument {!r} should be a numpy array of type bool, "
                      "not {}".format(name, array.dtype))
 
@@ -99,7 +99,7 @@ def _crop_to_bounding_box(mask, bbox_min, bbox_max):
   # we need to zeropad the cropped region with 1 voxel at the lower,
   # the right (and the back on 3D) sides. This is required to obtain the
   # "full" convolution result with the 2x2 (or 2x2x2 in 3D) kernel.
-  # TODO:  This is correct only if the object is interior to the
+  TODO:  This is correct only if the object is interior to the
   # bounding box.
   cropmask = np.zeros((bbox_max - bbox_min) + 2, np.uint8)
 
